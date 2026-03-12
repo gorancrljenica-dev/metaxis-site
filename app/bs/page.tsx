@@ -5,19 +5,19 @@ import LabsSection from "@/components/LabsSection";
 import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 
-export default function HomePage() {
+export default function BsHomePage() {
   return (
     <>
-      <Hero locale="en" />
-      <WhatIBuild locale="en" />
+      <Hero locale="bs" />
+      <WhatIBuild locale="bs" />
       <div className="border-t border-zinc-800/40" />
-      <ProjectsSection locale="en" />
+      <ProjectsSection locale="bs" />
       <div className="border-t border-zinc-800/40" />
-      <LabsSection locale="en" />
+      <LabsSection locale="bs" />
       <div className="border-t border-zinc-800/40" />
-      <BlogSection locale="en" />
+      <BlogSection locale="bs" />
       <div className="border-t border-zinc-800/40" />
-      <ContactSection locale="en" />
+      <ContactSection locale="bs" />
     </>
   );
 }

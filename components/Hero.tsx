@@ -3,8 +3,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { t, localePath, type Locale } from "@/lib/i18n";
 
-export default function Hero() {
+interface HeroProps {
+  locale?: Locale;
+}
+
+export default function Hero({ locale = "en" }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Grid background */}
@@ -32,7 +37,7 @@ export default function Hero() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
           <span className="text-zinc-400 text-xs tracking-wide">
-            AI Systems & Decision Tools
+            {t("hero.badge", locale)}
           </span>
         </motion.div>
 
@@ -53,10 +58,10 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Building AI decision systems and automation tools.
+          {t("hero.subtitle", locale)}
           <br className="hidden md:block" />
           <span className="text-zinc-500">
-            {" "}Where intelligence meets clinical practice.
+            {" "}{t("hero.subtitle2", locale)}
           </span>
         </motion.p>
 
@@ -68,20 +73,20 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="/projects"
+            href={localePath("/projects", locale)}
             className="group flex items-center gap-2 px-6 py-3 bg-white text-zinc-950 rounded-lg font-medium text-sm hover:bg-zinc-100 transition-all duration-200 hover:shadow-lg hover:shadow-white/10"
           >
-            Explore Projects
+            {t("hero.cta.projects", locale)}
             <ArrowRight
               size={16}
               className="group-hover:translate-x-0.5 transition-transform"
             />
           </Link>
           <Link
-            href="/labs"
+            href={localePath("/labs", locale)}
             className="flex items-center gap-2 px-6 py-3 border border-zinc-700 text-zinc-300 rounded-lg font-medium text-sm hover:border-zinc-500 hover:text-white transition-all duration-200"
           >
-            View Labs
+            {t("hero.cta.labs", locale)}
           </Link>
         </motion.div>
 
@@ -93,7 +98,7 @@ export default function Hero() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-zinc-600 text-xs tracking-widest uppercase">
-            Scroll
+            {t("hero.scroll", locale)}
           </span>
           <motion.div
             animate={{ y: [0, 6, 0] }}

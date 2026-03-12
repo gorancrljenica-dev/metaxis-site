@@ -3,19 +3,21 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/data";
+import { t, type Locale } from "@/lib/i18n";
 
 interface ProjectCardProps {
   project: Project;
   index?: number;
+  locale?: Locale;
 }
 
-const statusConfig = {
-  live: { label: "Live", color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20" },
-  "in-progress": { label: "In Progress", color: "text-amber-400 bg-amber-400/10 border-amber-400/20" },
-  "coming-soon": { label: "Coming Soon", color: "text-zinc-400 bg-zinc-400/10 border-zinc-400/20" },
-};
+export default function ProjectCard({ project, index = 0, locale = "en" }: ProjectCardProps) {
+  const statusConfig = {
+    live: { labelKey: "projects.status.live", color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20" },
+    "in-progress": { labelKey: "projects.status.inProgress", color: "text-amber-400 bg-amber-400/10 border-amber-400/20" },
+    "coming-soon": { labelKey: "projects.status.comingSoon", color: "text-zinc-400 bg-zinc-400/10 border-zinc-400/20" },
+  };
 
-export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const status = statusConfig[project.status];
 
   return (
@@ -35,7 +37,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           <span
             className={`inline-block mt-1.5 px-2 py-0.5 text-xs rounded-md border font-medium ${status.color}`}
           >
-            {status.label}
+            {t(status.labelKey, locale)}
           </span>
         </div>
         {project.demoUrl && (
@@ -79,12 +81,12 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
           >
             <ExternalLink size={13} />
-            Live Demo
+            {t("projects.demo", locale)}
           </a>
         ) : (
           <span className="flex items-center gap-1.5 text-xs text-zinc-600 cursor-not-allowed">
             <ExternalLink size={13} />
-            Demo unavailable
+            {t("projects.demoUnavailable", locale)}
           </span>
         )}
 
@@ -96,12 +98,12 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
           >
             <Github size={13} />
-            GitHub
+            {t("projects.github", locale)}
           </a>
         ) : (
           <span className="flex items-center gap-1.5 text-xs text-zinc-700 cursor-not-allowed">
             <Github size={13} />
-            GitHub (soon)
+            {t("projects.githubSoon", locale)}
           </span>
         )}
       </div>

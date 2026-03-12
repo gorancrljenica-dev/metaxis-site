@@ -4,8 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, BookOpen } from "lucide-react";
 import { blogPosts } from "@/lib/data";
+import { t, localePath, type Locale } from "@/lib/i18n";
 
-export default function BlogSection() {
+interface BlogSectionProps {
+  locale?: Locale;
+}
+
+export default function BlogSection({ locale = "en" }: BlogSectionProps) {
   return (
     <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -19,21 +24,20 @@ export default function BlogSection() {
         >
           <div>
             <p className="text-violet-400 text-sm font-medium tracking-wider uppercase mb-3">
-              Writing
+              {t("blog.label", locale)}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-              Blog
+              {t("blog.title", locale)}
             </h2>
             <p className="text-zinc-500 mt-3 text-base max-w-md">
-              Thoughts on AI systems, clinical informatics, and building tools
-              that matter.
+              {t("blog.description", locale)}
             </p>
           </div>
           <Link
-            href="/blog"
+            href={localePath("/blog", locale)}
             className="group flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors self-start md:self-auto"
           >
-            View all posts
+            {t("blog.viewAll", locale)}
             <ArrowRight
               size={15}
               className="group-hover:translate-x-0.5 transition-transform"
@@ -51,7 +55,7 @@ export default function BlogSection() {
         >
           <BookOpen size={15} className="text-zinc-500 shrink-0" />
           <p className="text-zinc-500 text-sm">
-            Blog posts are coming soon. Previews below.
+            {t("blog.banner", locale)}
           </p>
         </motion.div>
 

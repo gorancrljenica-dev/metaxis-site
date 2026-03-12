@@ -2,8 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { t, type Locale } from "@/lib/i18n";
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  locale?: Locale;
+}
+
+export default function ContactSection({ locale = "en" }: ContactSectionProps) {
   return (
     <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -16,10 +21,10 @@ export default function ContactSection() {
           className="mb-16"
         >
           <p className="text-violet-400 text-sm font-medium tracking-wider uppercase mb-3">
-            Get in Touch
+            {t("contact.label", locale)}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Contact
+            {t("contact.title", locale)}
           </h2>
         </motion.div>
 
@@ -33,13 +38,10 @@ export default function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-              Interested in collaborating on AI systems, clinical decision
-              support, or automation projects?
+              {t("contact.p1", locale)}
             </p>
             <p className="text-zinc-600 text-base leading-relaxed">
-              I&apos;m open to consulting engagements, research collaborations,
-              and conversations about applying AI to complex decision
-              environments.
+              {t("contact.p2", locale)}
             </p>
           </motion.div>
 
@@ -63,8 +65,8 @@ export default function ContactSection() {
                   <Linkedin size={18} className="text-blue-400" />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">LinkedIn</p>
-                  <p className="text-zinc-600 text-xs">Connect professionally</p>
+                  <p className="text-white text-sm font-medium">{t("contact.linkedin", locale)}</p>
+                  <p className="text-zinc-600 text-xs">{t("contact.linkedin.sub", locale)}</p>
                 </div>
               </div>
               <ArrowUpRight
@@ -83,7 +85,7 @@ export default function ContactSection() {
                   <Mail size={18} className="text-violet-400" />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">Email</p>
+                  <p className="text-white text-sm font-medium">{t("contact.email", locale)}</p>
                   <p className="text-zinc-600 text-xs">hello@metaxis.dev</p>
                 </div>
               </div>

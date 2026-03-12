@@ -4,19 +4,34 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { t, detectLocale, localePath, basePath } from "@/lib/i18n";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Labs", href: "/labs" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+const navKeys = [
+  { key: "nav.home", path: "/" },
+  { key: "nav.projects", path: "/projects" },
+  { key: "nav.labs", path: "/labs" },
+  { key: "nav.blog", path: "/blog" },
+  { key: "nav.contact", path: "/contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const locale = detectLocale(pathname);
+  const base = basePath(pathname);
+
+  const navLinks = navKeys.map((item) => ({
+    name: t(item.key, locale),
+    href: localePath(item.path, locale),
+    active: base === item.path || (item.path !== "/" && base.startsWith(item.path)),
+  }));
+
+  const switchLocale = locale === "en" ? "bs" : "en";
+  const switchHref =
+    locale === "en"
+      ? `/bs${pathname === "/" ? "" : pathname}`
+      : basePath(pathname);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -34,7 +49,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2">
+        <Link href={localePath("/", locale)} className="group flex items-center gap-2">
           <div className="w-6 h-6 rounded bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
             <span className="text-white text-xs font-bold">M</span>
           </div>
@@ -47,10 +62,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
-              key={link.name}
+              key={link.href}
               href={link.href}
               className={`px-3 py-1.5 rounded-md text-sm transition-all duration-200 ${
-                pathname === link.href
+                link.active
                   ? "text-white bg-zinc-800/60"
                   : "text-zinc-400 hover:text-white hover:bg-zinc-800/40"
               }`}
@@ -58,6 +73,15 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* Language switcher */}
+          <Link
+            href={switchHref}
+            className="ml-2 px-3 py-1.5 rounded-md text-xs font-medium border border-zinc-700 text-zinc-400 hover:text-white hover:border-zinc-500 transition-all duration-200"
+            aria-label={`Switch to ${t("lang.switch.label", locale)}`}
+          >
+            {t("lang.switch", locale)}
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -97,10 +121,10 @@ export default function Navbar() {
             <div className="px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   className={`px-3 py-2 rounded-md text-sm transition-colors ${
-                    pathname === link.href
+                    link.active
                       ? "text-white bg-zinc-800"
                       : "text-zinc-400 hover:text-white"
                   }`}
@@ -109,6 +133,14 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              {/* Language switcher */}
+              <Link
+                href={switchHref}
+                className="px-3 py-2 rounded-md text-sm text-zinc-500 hover:text-white transition-colors border-t border-zinc-800 mt-1 pt-3"
+                onClick={() => setMenuOpen(false)}
+              >
+                {t("lang.switch.label", locale)}
+              </Link>
             </div>
           </motion.div>
         )}

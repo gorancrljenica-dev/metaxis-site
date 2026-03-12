@@ -2,31 +2,33 @@
 
 import { motion } from "framer-motion";
 import { Brain, Zap, HeartPulse } from "lucide-react";
+import { t, type Locale } from "@/lib/i18n";
 
-const capabilities = [
+interface WhatIBuildProps {
+  locale?: Locale;
+}
+
+const cardMeta = [
   {
     icon: Brain,
-    title: "AI Decision Support",
-    description:
-      "Computable clinical guidelines and evidence-based decision tools that augment clinician judgment — not replace it.",
+    titleKey: "whatibuild.card1.title",
+    descKey: "whatibuild.card1.description",
     gradient: "from-violet-500/10 to-purple-500/5",
     border: "hover:border-violet-500/30",
     iconColor: "text-violet-400",
   },
   {
     icon: Zap,
-    title: "Automation Systems",
-    description:
-      "End-to-end workflow automation for operations, communications, and data pipelines — built to scale cleanly.",
+    titleKey: "whatibuild.card2.title",
+    descKey: "whatibuild.card2.description",
     gradient: "from-indigo-500/10 to-blue-500/5",
     border: "hover:border-indigo-500/30",
     iconColor: "text-indigo-400",
   },
   {
     icon: HeartPulse,
-    title: "Digital Health Tools",
-    description:
-      "Patient-facing and clinical digital tools — screening instruments, monitoring dashboards, health applications.",
+    titleKey: "whatibuild.card3.title",
+    descKey: "whatibuild.card3.description",
     gradient: "from-sky-500/10 to-cyan-500/5",
     border: "hover:border-sky-500/30",
     iconColor: "text-sky-400",
@@ -51,7 +53,7 @@ const cardVariants = {
   },
 };
 
-export default function WhatIBuild() {
+export default function WhatIBuild({ locale = "en" }: WhatIBuildProps) {
   return (
     <section className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -64,14 +66,13 @@ export default function WhatIBuild() {
           className="mb-16"
         >
           <p className="text-violet-400 text-sm font-medium tracking-wider uppercase mb-3">
-            Capabilities
+            {t("whatibuild.label", locale)}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            What I Build
+            {t("whatibuild.title", locale)}
           </h2>
           <p className="text-zinc-500 mt-3 max-w-lg text-base">
-            Systems where structured intelligence and human decision-making
-            intersect.
+            {t("whatibuild.description", locale)}
           </p>
         </motion.div>
 
@@ -83,11 +84,11 @@ export default function WhatIBuild() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-5"
         >
-          {capabilities.map((item) => {
+          {cardMeta.map((item) => {
             const Icon = item.icon;
             return (
               <motion.div
-                key={item.title}
+                key={item.titleKey}
                 variants={cardVariants}
                 className={`group relative p-6 rounded-xl border border-zinc-800 bg-gradient-to-br ${item.gradient} bg-zinc-900/40 ${item.border} transition-all duration-300 card-glow cursor-default`}
               >
@@ -100,10 +101,10 @@ export default function WhatIBuild() {
 
                 {/* Text */}
                 <h3 className="text-white font-semibold text-lg mb-2 tracking-tight">
-                  {item.title}
+                  {t(item.titleKey, locale)}
                 </h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">
-                  {item.description}
+                  {t(item.descKey, locale)}
                 </p>
 
                 {/* Decorative corner */}
