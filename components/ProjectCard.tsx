@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import type { Project } from "@/lib/data";
 import { t, type Locale } from "@/lib/i18n";
 
@@ -28,6 +29,18 @@ export default function ProjectCard({ project, index = 0, locale = "en" }: Proje
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative flex flex-col p-6 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 hover:bg-zinc-900/60 transition-all duration-300 card-glow"
     >
+      {/* Screenshot preview */}
+      {project.imageUrl && (
+        <div className="relative mb-5 rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 h-44">
+          <Image
+            src={project.imageUrl}
+            alt={`${project.title} screenshot`}
+            fill
+            className="object-cover object-top opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+      )}
+
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div>

@@ -18,7 +18,7 @@
   "whatibuild.title": "Što Gradim",
   "whatibuild.description": "Sistemi gdje se strukturirana inteligencija i ljudsko odlučivanje presijecaju.",
   "whatibuild.card1.title": "AI Podrška Odlučivanju",
-  "whatibuild.card1.description": "Kompjuterske kliničke smjernice i alati za odlučivanje zasnovani na dokazima koji nadopunjuju prosudbu kliničara — ne zamjenjuju je.",
+  "whatibuild.card1.description": "ESC kliničke smjernice kodirane u interaktivne rule-based sisteme odlučivanja. Klinički parametri pacijenta procesiraju se kroz sigurnosne gate-ove — generirajući personalizirana terapijska razmatranja uz očuvanje kliničke autonomije ljekara.",
   "whatibuild.card2.title": "Sistemi Automatizacije",
   "whatibuild.card2.description": "Kompleksna automatizacija radnih procesa za operacije, komunikacije i cjevovode podataka — izgrađena za čisto skaliranje.",
   "whatibuild.card3.title": "Digitalni Zdravstveni Alati",

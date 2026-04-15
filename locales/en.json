@@ -18,7 +18,7 @@
   "whatibuild.title": "What I Build",
   "whatibuild.description": "Systems where structured intelligence and human decision-making intersect.",
   "whatibuild.card1.title": "AI Decision Support",
-  "whatibuild.card1.description": "Computable clinical guidelines and evidence-based decision tools that augment clinician judgment — not replace it.",
+  "whatibuild.card1.description": "ESC clinical guidelines encoded into interactive rule engines. Patient inputs processed through structured safety gates — generating personalized therapy considerations while preserving full clinician autonomy.",
   "whatibuild.card2.title": "Automation Systems",
   "whatibuild.card2.description": "End-to-end workflow automation for operations, communications, and data pipelines — built to scale cleanly.",
   "whatibuild.card3.title": "Digital Health Tools",

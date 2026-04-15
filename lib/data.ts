@@ -5,6 +5,7 @@ export interface Project {
   tags: string[];
   demoUrl?: string;
   githubUrl?: string;
+  imageUrl?: string;
   status: "live" | "in-progress" | "coming-soon";
 }
 
@@ -21,10 +22,11 @@ export const projects: Project[] = [
     id: "cds-hfref",
     title: "CDS HFrEF",
     description:
-      "Clinical decision support tool for heart failure with reduced ejection fraction. Assists clinicians in evidence-based treatment decisions using validated guideline algorithms.",
-    tags: ["Clinical AI", "Decision Support", "Cardiology"],
-    demoUrl: "#",
+      "Web application for clinical decision support in heart failure with reduced ejection fraction. Encodes ESC 2021 guidelines into an interactive rule engine — 8 clinical inputs (EF%, NYHA class, blood pressure, heart rate, renal function, potassium, current therapy, clinical limitations) processed through 5 decision rules and 6 safety gates. Outputs 4 structured cards: clinical summary, therapy considerations with rationale, safety warnings, and follow-up recommendations. Zero-backend — fully client-side, no patient data stored.",
+    tags: ["React 18", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui", "ESC 2021"],
+    demoUrl: "https://hfref.metaxis.io",
     githubUrl: undefined,
+    imageUrl: "/screenshots/cds-hfref.png",
     status: "live",
   },
   {
