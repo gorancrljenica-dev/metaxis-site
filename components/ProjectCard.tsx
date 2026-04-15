@@ -30,14 +30,22 @@ export default function ProjectCard({ project, index = 0, locale = "en" }: Proje
       className="group relative flex flex-col p-6 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 hover:bg-zinc-900/60 transition-all duration-300 card-glow"
     >
       {/* Screenshot preview */}
-      {project.imageUrl && (
-        <div className="relative mb-5 rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 h-44">
-          <Image
-            src={project.imageUrl}
-            alt={`${project.title} screenshot`}
-            fill
-            className="object-cover object-top opacity-75 group-hover:opacity-100 transition-opacity duration-300"
-          />
+      {project.images && project.images.length > 0 && (
+        <div
+          className={`mb-5 rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 ${
+            project.images.length >= 2 ? "grid grid-cols-2 gap-0.5" : ""
+          }`}
+        >
+          {project.images.slice(0, 2).map((src, i) => (
+            <div key={i} className="relative h-36 bg-zinc-900">
+              <Image
+                src={src}
+                alt={`${project.title} screenshot ${i + 1}`}
+                fill
+                className="object-cover object-top opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          ))}
         </div>
       )}
 

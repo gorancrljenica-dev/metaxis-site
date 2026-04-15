@@ -5,7 +5,7 @@ export interface Project {
   tags: string[];
   demoUrl?: string;
   githubUrl?: string;
-  imageUrl?: string;
+  images?: string[];
   status: "live" | "in-progress" | "coming-soon";
 }
 
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     tags: ["React 18", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui", "ESC 2021"],
     demoUrl: "https://hfref.metaxis.io",
     githubUrl: undefined,
-    imageUrl: "/screenshots/cds-hfref.png",
+    images: ["/screenshots/cds-hfref.png", "/screenshots/cds-hfref 1.png"],
     status: "live",
   },
   {
