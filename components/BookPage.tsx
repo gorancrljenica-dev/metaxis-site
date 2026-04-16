@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, X } from "lucide-react";
 
@@ -68,44 +67,26 @@ function BookCover() {
   );
 }
 
-// ── Email Notify Form ─────────────────────────────────────────────────────────
+// ── Buy Button ────────────────────────────────────────────────────────────────
 
-function NotifyForm({ label = "Obavijesti me o lansiranju" }: { label?: string }) {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+const PAYPAL_LINK = "PAYPAL_LINK_HERE";
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) setSubmitted(true);
-    // TODO: Wire to Kit (ConvertKit) embed when account is set up
-  };
-
-  if (submitted) {
-    return (
-      <div className="flex items-center gap-2 text-sm text-blue-400">
-        <Check size={16} />
-        Hvala! Javit ćemo se kad knjiga bude dostupna.
-      </div>
-    );
-  }
-
+function BuyButton({ size = "default" }: { size?: "default" | "large" }) {
+  const isLarge = size === "large";
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 max-w-md">
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="tvoj@email.com"
-        className="flex-1 px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-sm placeholder-zinc-600 focus:outline-none focus:border-blue-500 transition-colors"
-      />
-      <button
-        type="submit"
-        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg font-medium text-sm hover:bg-blue-700 transition-colors whitespace-nowrap"
+    <div className="flex flex-col gap-2">
+      <a
+        href={PAYPAL_LINK}
+        className={`inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-colors w-fit ${
+          isLarge ? "px-8 py-3.5 text-lg" : "px-6 py-3 text-base"
+        }`}
       >
-        {label} <ArrowRight size={15} />
-      </button>
-    </form>
+        Kupi — 19 EUR <ArrowRight size={isLarge ? 18 : 16} />
+      </a>
+      <p className="text-[12px] text-[#555] font-mono">
+        PDF · Digitalni download · PayPal
+      </p>
+    </div>
   );
 }
 
@@ -202,10 +183,7 @@ export default function BookPage() {
               </motion.p>
 
               <motion.div variants={fadeUp}>
-                <p className="text-[12px] text-[#555555] font-mono uppercase tracking-[1px] mb-3">
-                  Obavijesti me o lansiranju
-                </p>
-                <NotifyForm />
+                <BuyButton />
               </motion.div>
 
               {/* Stats */}
@@ -407,20 +385,20 @@ export default function BookPage() {
             className="rounded-2xl border border-zinc-800 bg-zinc-900/20 p-10 md:p-14 text-center"
           >
             <p className="text-[13px] uppercase text-blue-500 tracking-[2px] font-medium mb-4">
-              Uskoro dostupno
+              Dostupno odmah
             </p>
             <h2 className="text-2xl md:text-3xl text-white font-bold mb-3">
-              Budi prvi koji sazna
+              Preuzmi odmah
             </h2>
             <p className="text-[#888] text-base mb-8 max-w-md mx-auto">
-              Bosanska verzija izlazi uskoro. Prijavi se i dobit ćeš obavijest
-              čim knjiga bude dostupna za kupovinu.
+              Bosanska verzija dostupna kao PDF download.
+              57 lekcija operativnih obrazaca za rad sa AI.
             </p>
             <div className="flex justify-center">
-              <NotifyForm label="Prijavi se" />
+              <BuyButton size="large" />
             </div>
-            <p className="text-[#444] text-xs mt-4 font-mono">
-              Bez spama. Samo jedna poruka kad knjiga izađe.
+            <p className="text-[#444] text-xs mt-6 font-mono">
+              Nakon plaćanja dobit ćeš link za preuzimanje.
             </p>
           </motion.div>
         </div>
