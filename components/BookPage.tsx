@@ -69,8 +69,7 @@ function BookCover() {
 
 // ── Buy Button ────────────────────────────────────────────────────────────────
 
-const PAYPAL_URL =
-  "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3Q2HE54HA55G";
+const PAYPAL_URL = "https://www.paypal.com/ncp/payment/G3Q2HE54HA55G";
 
 function BuyButton({ size = "default" }: { size?: "default" | "large" }) {
   const isLarge = size === "large";
