@@ -40,14 +40,15 @@ export const projects: Project[] = [
     status: "live",
   },
   {
-    id: "sports-club-manager",
-    title: "Sports Club Manager",
+    id: "therapy-dose-tracker",
+    title: "Therapy Dose Tracker",
     description:
-      "Full-stack automation system for sports club operations — member management, scheduling, communications, and analytics in one unified platform.",
-    tags: ["Automation", "Full-Stack", "SaaS"],
-    demoUrl: "#",
+      "Installable clinical PWA for managing long-term injection therapy in outpatient practice. Encodes the dosing protocol into a deterministic scheduling engine — handling delays, automatic schedule recalculation, and full therapy resets with complete history preserved. Offline-first with cloud sync (Supabase), multi-user auth, lipid panel tracking per dose, and clinical reports — charts, CSV export, and print. In active clinical use.",
+    tags: ["Next.js 16", "TypeScript", "PWA", "Supabase", "Dexie.js", "Recharts", "Offline-first"],
+    demoUrl: "https://inclisiran-pwa.vercel.app/",
     githubUrl: undefined,
-    status: "in-progress",
+    images: ["/screenshots/dose-tracker-1.png", "/screenshots/dose-tracker-2.png"],
+    status: "live",
   },
 ];
 
