@@ -27,13 +27,13 @@ export default function Hero({ locale = "en" }: HeroProps) {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-5 py-28 md:py-0 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm"
+          className="inline-flex items-center gap-2 px-3 py-1 mb-6 md:mb-8 rounded-full border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
           <span className="text-zinc-400 text-xs tracking-wide">
@@ -46,7 +46,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-none"
+          className="text-5xl md:text-8xl font-bold tracking-tight mb-4 md:mb-6 leading-none"
         >
           <span className="gradient-text">Metaxis</span>
         </motion.h1>
@@ -56,7 +56,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-base md:text-xl text-zinc-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
         >
           {t("hero.subtitle", locale)}
           <br className="hidden md:block" />
@@ -70,7 +70,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
             href={localePath("/projects", locale)}
@@ -89,24 +89,24 @@ export default function Hero({ locale = "en" }: HeroProps) {
             {t("hero.cta.labs", locale)}
           </Link>
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-zinc-600 text-xs tracking-widest uppercase">
-            {t("hero.scroll", locale)}
-          </span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="w-0.5 h-6 bg-gradient-to-b from-zinc-600 to-transparent rounded-full"
-          />
-        </motion.div>
       </div>
+
+      {/* Scroll indicator — outside content div, positioned to section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+      >
+        <span className="text-zinc-600 text-xs tracking-widest uppercase">
+          {t("hero.scroll", locale)}
+        </span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="w-0.5 h-6 bg-gradient-to-b from-zinc-600 to-transparent rounded-full"
+        />
+      </motion.div>
     </section>
   );
 }
