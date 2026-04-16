@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Check, X } from "lucide-react";
-import Script from "next/script";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -68,28 +67,22 @@ function BookCover() {
   );
 }
 
-// ── PayPal Hosted Button ──────────────────────────────────────────────────────
+// ── Buy Button ────────────────────────────────────────────────────────────────
 
-const PP_CLIENT_ID =
-  "BAAFv2jOXA7IwZRK3O_hjRakow_HrvlsCEuyhdNHUKE2xUlYase19qdncNJ3-8buf7DkJGKmp5a3pcA2P4";
-const PP_BUTTON_ID = "G3Q2HE54HA55G";
-const PP_CONTAINER = `paypal-container-${PP_BUTTON_ID}`;
-const PP_SCRIPT_SRC = `https://www.paypal.com/sdk/js?client-id=${PP_CLIENT_ID}&components=hosted-buttons&disable-funding=venmo&currency=EUR`;
+const PAYPAL_URL =
+  "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3Q2HE54HA55G";
 
-function PayPalButton() {
+function BuyButton({ size = "default" }: { size?: "default" | "large" }) {
+  const isLarge = size === "large";
   return (
-    <>
-      <Script
-        src={PP_SCRIPT_SRC}
-        onLoad={() => {
-          (window as any).paypal
-            ?.HostedButtons({ hostedButtonId: PP_BUTTON_ID })
-            .render(`#${PP_CONTAINER}`)
-            .catch(console.error);
-        }}
-      />
-      <div id={PP_CONTAINER} className="min-h-[50px]" />
-    </>
+    <a
+      href={PAYPAL_URL}
+      className={`inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/20 ${
+        isLarge ? "px-8 py-4 text-lg" : "px-6 py-3 text-base"
+      }`}
+    >
+      Kupi — 20 EUR <ArrowRight size={isLarge ? 18 : 16} />
+    </a>
   );
 }
 
@@ -185,13 +178,8 @@ export default function BookPage() {
                 ponovljive rezultate — 57 lekcija iz operativne prakse.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="flex flex-col gap-2">
-                <a
-                  href="#purchase"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-colors w-fit"
-                >
-                  Kupi — 19 EUR <ArrowRight size={16} />
-                </a>
+              <motion.div variants={fadeUp} className="flex flex-col gap-3">
+                <BuyButton />
                 <p className="text-[12px] text-[#555] font-mono">
                   PDF · Digitalni download · PayPal
                 </p>
@@ -398,17 +386,20 @@ export default function BookPage() {
             <p className="text-[13px] uppercase text-blue-500 tracking-[2px] font-medium mb-4">
               Dostupno odmah
             </p>
-            <h2 className="text-2xl md:text-3xl text-white font-bold mb-3">
+            <h2 className="text-2xl md:text-3xl text-white font-bold mb-4">
               Preuzmi odmah
             </h2>
-            <p className="text-[#888] text-base mb-8 max-w-md mx-auto">
+            <p className="text-[#888] text-base leading-relaxed mb-6 max-w-md mx-auto">
               Bosanska verzija dostupna kao PDF download.
               57 lekcija operativnih obrazaca za rad sa AI.
             </p>
-            <div className="flex justify-center">
-              <PayPalButton />
+            <p className="text-white text-3xl font-bold mb-6">
+              20 EUR
+            </p>
+            <div className="flex justify-center mb-4">
+              <BuyButton size="large" />
             </div>
-            <p className="text-[#444] text-xs mt-4 font-mono">
+            <p className="text-[#444] text-xs font-mono">
               Nakon plaćanja dobit ćeš link za preuzimanje.
             </p>
           </motion.div>
