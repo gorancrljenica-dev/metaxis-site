@@ -1,5 +1,7 @@
+import { getAllPosts } from "@/lib/blog";
 import BlogPageContent from "@/components/BlogPageContent";
 
 export default function BsBlogPage() {
-  return <BlogPageContent locale="bs" />;
+  const posts = getAllPosts();
+  return <BlogPageContent locale="bs" posts={posts} />;
 }
