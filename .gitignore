@@ -22,3 +22,6 @@ Thumbs.db
 
 # IDE
 .vscode
+
+# n8n workflow exports (contain API keys)
+n8n-*.json
