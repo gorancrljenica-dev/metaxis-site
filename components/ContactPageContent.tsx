@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Mail, ArrowUpRight, MessageSquare } from "lucide-react";
+import { Mail, ArrowUpRight, MessageSquare } from "lucide-react";
 import { t, type Locale } from "@/lib/i18n";
 
 interface ContactPageContentProps {
@@ -74,33 +74,9 @@ export default function ContactPageContent({ locale = "en" }: ContactPageContent
             transition={{ duration: 0.5, delay: 0.2 }}
             className="md:col-span-3 flex flex-col gap-4"
           >
-            {/* LinkedIn */}
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between p-6 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:border-zinc-600 hover:bg-zinc-900/60 transition-all duration-300"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center">
-                  <Linkedin size={20} className="text-blue-400" />
-                </div>
-                <div>
-                  <p className="text-white font-medium">{t("contact.linkedin", locale)}</p>
-                  <p className="text-zinc-500 text-sm mt-0.5">
-                    {t("contact.linkedin.sub", locale)}
-                  </p>
-                </div>
-              </div>
-              <ArrowUpRight
-                size={18}
-                className="text-zinc-600 group-hover:text-zinc-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-              />
-            </a>
-
             {/* Email */}
             <a
-              href="mailto:hello@metaxis.dev"
+              href="mailto:hello@metaxis.io"
               className="group flex items-center justify-between p-6 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:border-zinc-600 hover:bg-zinc-900/60 transition-all duration-300"
             >
               <div className="flex items-center gap-4">
@@ -110,7 +86,7 @@ export default function ContactPageContent({ locale = "en" }: ContactPageContent
                 <div>
                   <p className="text-white font-medium">{t("contact.email", locale)}</p>
                   <p className="text-zinc-500 text-sm mt-0.5">
-                    hello@metaxis.dev
+                    hello@metaxis.io
                   </p>
                 </div>
               </div>
