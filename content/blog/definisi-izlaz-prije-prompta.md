@@ -1,7 +1,7 @@
 ---
 title: "Definiši izlaz prije nego napišeš prompt"
 date: "2026-04-17"
-slug: "definiši-izlaz-prije-prompta"
+slug: "definisi-izlaz-prije-prompta"
 excerpt: "Najveća greška pri kreiranju AI sistema je pisanje prompta bez jasne specifikacije očekivanog izlaza."
 tags: ["AI", "Prompt Engineering", "Production"]
 readTime: "3 min čitanja"
