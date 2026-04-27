@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Check, X } from "lucide-react";
+import BrevoSignupForm from "@/components/BrevoSignupForm";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -367,6 +368,39 @@ export default function BookPage() {
                   Ova knjiga je rezultat tog pristupa.
                 </p>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── EMAIL SIGNUP ────────────────────────────────────────────────── */}
+      <section className="py-20 px-6 border-t border-zinc-800/40">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              variants={fadeUp}
+            >
+              <p className="text-[13px] uppercase text-blue-500 tracking-[2px] font-medium mb-3">
+                Besplatno
+              </p>
+              <h2 className="text-2xl md:text-3xl text-white font-bold mb-4">
+                Preuzmi prvo poglavlje
+              </h2>
+              <p className="text-[#888] text-base leading-relaxed">
+                Upiši email i dobij prvi blok knjige — 10 lekcija o kontroli
+                outputa — besplatno. Bez spama, samo sadržaj.
+              </p>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              variants={fadeUp}
+            >
+              <BrevoSignupForm />
             </motion.div>
           </div>
         </div>
