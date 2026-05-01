@@ -40,6 +40,17 @@ export const projects: Project[] = [
     status: "live",
   },
   {
+    id: "metaxis-llm-brain",
+    title: "Metaxis LLM Brain",
+    description:
+      "Personal AI knowledge companion built on the Karpathy-style wiki compilation method — 106 raw source documents distilled into 70 structured knowledge nodes with 857 explicit connections. The graph layer uses a custom Python pipeline to build a navigable wiki with typed relationships. Brain UI exposes three interaction modes: Graph Explorer (vis-network force-directed visualization with live node filtering), Node Reader (markdown rendering with wikilink traversal), and Brain Chat (Claude Sonnet grounded in full vault context — not a generic assistant, but a thinking partner that reasons from your own compiled knowledge). Thinking patterns encoded directly into the system prompt: Flipped Interaction, Role Thinking, Task Planning, Verification.",
+    tags: ["Next.js 16", "TypeScript", "Claude API", "Python", "vis-network", "Knowledge Graph", "Obsidian"],
+    demoUrl: "https://metaxis-llm-brain-ka8j7baxu-gorancrljenica-devs-projects.vercel.app",
+    githubUrl: undefined,
+    images: ["/screenshots/brain-graph.png", "/screenshots/brain-chat.png"],
+    status: "live",
+  },
+  {
     id: "therapy-dose-tracker",
     title: "Therapy Dose Tracker",
     description:
