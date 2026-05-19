@@ -54,7 +54,7 @@ export const projects: Project[] = [
     id: "therapy-dose-tracker",
     title: "Therapy Dose Tracker",
     description:
-      "Installable clinical PWA for managing long-term injection therapy in outpatient practice. Encodes the dosing protocol into a deterministic scheduling engine — handling delays, automatic schedule recalculation, and full therapy resets with complete history preserved. Offline-first with cloud sync (Supabase), multi-user auth, lipid panel tracking per dose, and clinical reports — charts, CSV export, and print. In active clinical use.",
+      "A clinical PWA that helps outpatient teams manage long-term injection therapy. Tracks doses, delays, and full treatment history without losing context — works offline and syncs when connected. In active clinical use.",
     tags: ["Next.js 16", "TypeScript", "PWA", "Supabase", "Dexie.js", "Recharts", "Offline-first"],
     demoUrl: "https://inclisiran-pwa.vercel.app/",
     githubUrl: undefined,

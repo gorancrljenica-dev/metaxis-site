@@ -26,10 +26,10 @@
 
   "projects.label": "Work",
   "projects.title": "Projects",
-  "projects.description": "Production tools and systems built for real-world clinical and operational use.",
+  "projects.description": "Tools for real work in clinical, research, and educational settings.",
   "projects.viewAll": "View all projects",
   "projects.page.label": "Portfolio",
-  "projects.page.description": "Production AI systems and tools — clinical decision support, digital health instruments, and operational automation.",
+  "projects.page.description": "Tools and systems in active clinical, research, and educational use — decision support, interactive congress tools, and long-term treatment tracking.",
   "projects.stat.total": "Total Projects",
   "projects.stat.live": "Live",
   "projects.stat.inProgress": "In Progress",

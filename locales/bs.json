@@ -26,10 +26,10 @@
 
   "projects.label": "Rad",
   "projects.title": "Projekti",
-  "projects.description": "Produkcijski alati i sistemi izgrađeni za stvarnu kliničku i operativnu upotrebu.",
+  "projects.description": "Alati za stvarni rad u klinici, istraživanju i edukaciji.",
   "projects.viewAll": "Pogledaj sve projekte",
   "projects.page.label": "Portfolio",
-  "projects.page.description": "Produkcijski AI sistemi i alati — klinička podrška odlučivanju, digitalni zdravstveni instrumenti i operativna automatizacija.",
+  "projects.page.description": "Alati i sistemi u aktivnoj kliničkoj, istraživačkoj i edukativnoj upotrebi — klinička podrška odlučivanju, interaktivni alati za kongrese i dugotrajno praćenje terapije.",
   "projects.stat.total": "Ukupno Projekata",
   "projects.stat.live": "Aktivnih",
   "projects.stat.inProgress": "U Razvoju",
