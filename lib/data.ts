@@ -22,7 +22,7 @@ export const projects: Project[] = [
     id: "cds-hfref",
     title: "CDS HFrEF",
     description:
-      "Web application for clinical decision support in heart failure with reduced ejection fraction. Encodes ESC 2021 guidelines into an interactive rule engine — 8 clinical inputs (EF%, NYHA class, blood pressure, heart rate, renal function, potassium, current therapy, clinical limitations) processed through 5 decision rules and 6 safety gates. Outputs 4 structured cards: clinical summary, therapy considerations with rationale, safety warnings, and follow-up recommendations. Zero-backend — fully client-side, no patient data stored.",
+      "A tool that helps clinicians assess HFrEF therapy options faster and more consistently. Built around ESC 2021 guidelines, runs entirely in the browser, and stores no patient data.",
     tags: ["React 18", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui", "ESC 2021"],
     demoUrl: "https://hfref.metaxis.io",
     githubUrl: undefined,
@@ -30,11 +30,11 @@ export const projects: Project[] = [
     status: "live",
   },
   {
-    id: "zung-depression",
-    title: "Zung Depression Screening",
+    id: "interactive-medical-tools",
+    title: "Interactive medical tools",
     description:
-      "Digital implementation of the Zung Self-Rating Depression Scale. Provides structured screening, automated scoring, and clinical interpretation guidance.",
-    tags: ["Mental Health", "Screening", "Digital Health"],
+      "Interactive web tools for medical talks, clinical questionnaires, quizzes, and educational content — accessible to audiences via QR codes during congresses and lectures.",
+    tags: ["Interactive tools", "QR access", "Congress", "Clinical questionnaires", "Education"],
     demoUrl: "#",
     githubUrl: undefined,
     status: "live",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: "metaxis-llm-brain",
     title: "Metaxis LLM Brain",
     description:
-      "Personal AI knowledge companion built on the Karpathy-style wiki compilation method — 106 raw source documents distilled into 70 structured knowledge nodes with 857 explicit connections. The graph layer uses a custom Python pipeline to build a navigable wiki with typed relationships. Brain UI exposes three interaction modes: Graph Explorer (vis-network force-directed visualization with live node filtering), Node Reader (markdown rendering with wikilink traversal), and Brain Chat (Claude Sonnet grounded in full vault context — not a generic assistant, but a thinking partner that reasons from your own compiled knowledge). Thinking patterns encoded directly into the system prompt: Flipped Interaction, Role Thinking, Task Planning, Verification.",
+      "A personal system for organizing notes, knowledge, and AI context across long-running projects and research. Source documents become a connected knowledge base with a chat layer grounded in the same notes — useful when work spans months and details need to stay close at hand.",
     tags: ["Next.js 16", "TypeScript", "Claude API", "Python", "vis-network", "Knowledge Graph", "Obsidian"],
     demoUrl: "https://metaxis-llm-brain-ka8j7baxu-gorancrljenica-devs-projects.vercel.app",
     githubUrl: undefined,
