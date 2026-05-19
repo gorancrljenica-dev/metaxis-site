@@ -7,11 +7,11 @@
   "lang.switch": "BS",
   "lang.switch.label": "Bosanski",
 
-  "hero.badge": "Operational Systems · Automation",
-  "hero.subtitle": "Turning inconsistent decisions and manual workflows into structured, repeatable systems.",
-  "hero.subtitle2": "Less guesswork. More control.",
-  "hero.cta.projects": "Explore Projects",
-  "hero.cta.labs": "View Labs",
+  "hero.badge": "AI tools for real work",
+  "hero.subtitle": "We build AI tools and automations for work that actually has to get done — not for the demo.",
+  "hero.subtitle2": "Systems that work quietly, day after day.",
+  "hero.cta.projects": "See projects",
+  "hero.cta.labs": "What we're testing",
   "hero.scroll": "Scroll",
 
   "whatibuild.label": "Capabilities",
