@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import WhatIBuild from "@/components/WhatIBuild";
+import HowWeThink from "@/components/HowWeThink";
 import ProjectsSection from "@/components/ProjectsSection";
 import LabsSection from "@/components/LabsSection";
 import BlogSection from "@/components/BlogSection";
@@ -12,6 +13,8 @@ export default function BsHomePage() {
     <>
       <Hero locale="bs" />
       <WhatIBuild locale="bs" />
+      <div className="border-t border-zinc-800/40" />
+      <HowWeThink locale="bs" />
       <div className="border-t border-zinc-800/40" />
       <ProjectsSection locale="bs" />
       <div className="border-t border-zinc-800/40" />

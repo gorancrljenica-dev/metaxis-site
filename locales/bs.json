@@ -24,6 +24,13 @@
   "whatibuild.card3.title": "Digitalni zdravstveni alati",
   "whatibuild.card3.description": "Digitalni alati za kliničku podršku, praćenje terapije i strukturiraniji rad u zdravstvenim procesima.",
 
+  "how.title": "Kako razmišljamo",
+  "how.p1": "Većina problema u radu ne nastaje zato što ljudi ne rade dovoljno.",
+  "how.p2": "Nastaje zato što su informacije rasute, procesi nedosljedni, a previše stvari zavisi od improvizacije.",
+  "how.p3": "Zato Metaxis gradi alate i sisteme koji pomažu timovima da rade jasnije, sa manje ručnog posla i manje operativnog haosa.",
+  "how.p4": "Ne pravimo tehnologiju radi tehnologije.",
+  "how.p5": "Pravimo stvari koje moraju raditi u stvarnom okruženju, dan za danom.",
+
   "projects.label": "Rad",
   "projects.title": "Projekti",
   "projects.description": "Alati za stvarni rad u klinici, istraživanju i edukaciji.",

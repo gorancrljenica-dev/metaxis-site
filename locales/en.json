@@ -24,6 +24,13 @@
   "whatibuild.card3.title": "Digital health tools",
   "whatibuild.card3.description": "Tools for clinical decision support, treatment tracking, and more organized day-to-day work in clinical practice.",
 
+  "how.title": "How We Think",
+  "how.p1": "Most operational problems do not happen because people are lazy or incapable.",
+  "how.p2": "They happen because information is scattered, processes are inconsistent, and too much work depends on improvisation.",
+  "how.p3": "That is why Metaxis builds tools and systems that help teams work with more clarity, less manual work, and less operational chaos.",
+  "how.p4": "We do not build technology for the sake of technology.",
+  "how.p5": "We build things that have to work in real environments, day after day.",
+
   "projects.label": "Work",
   "projects.title": "Projects",
   "projects.description": "Tools for real work in clinical, research, and educational settings.",
