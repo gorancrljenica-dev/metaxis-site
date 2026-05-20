@@ -50,9 +50,9 @@
 
   "labs.label": "Eksperimenti",
   "labs.title": "Laboratorij",
-  "labs.description": "Manji, eksperimentalni AI projekti — prototipi, dokazi koncepta i nove ideje.",
+  "labs.description": "Mjesto za ideje, prototipe i sisteme koje još testiramo u praksi.",
   "labs.viewAll": "Pogledaj sve eksperimente",
-  "labs.page.description": "Eksperimentalni AI projekti — prototipi, dokazi koncepta i nove ideje koje se istražuju otvoreno.",
+  "labs.page.description": "Mjesto za ideje, prototipe i sisteme koje još testiramo u praksi — radimo otvoreno, sa svim grubim ivicama.",
   "labs.note": "Lab projekti su eksperimentalni po prirodi — očekujte grube ivice, promjene koje kvare kompatibilnost i nepotpunu dokumentaciju.",
   "labs.status.experimental": "Eksperimentalno",
   "labs.status.prototype": "Prototip",

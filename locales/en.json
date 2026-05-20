@@ -50,9 +50,9 @@
 
   "labs.label": "Experiments",
   "labs.title": "Labs",
-  "labs.description": "Smaller, experimental AI projects — prototypes, proofs-of-concept, and novel ideas.",
+  "labs.description": "A space for ideas, prototypes, and systems we're still testing in practice.",
   "labs.viewAll": "View all experiments",
-  "labs.page.description": "Experimental AI projects — prototypes, proofs-of-concept, and novel ideas being explored in the open.",
+  "labs.page.description": "A space for ideas, prototypes, and systems we're still testing in practice — kept in the open, rough edges and all.",
   "labs.note": "Lab projects are experimental by nature — expect rough edges, breaking changes, and incomplete documentation.",
   "labs.status.experimental": "Experimental",
   "labs.status.prototype": "Prototype",
