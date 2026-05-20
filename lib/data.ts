@@ -68,7 +68,7 @@ export const labProjects: LabProject[] = [
     id: "prompt-optimizer",
     title: "Prompt Optimizer",
     description:
-      "Experimental tool that iteratively refines LLM prompts using automated evaluation and adversarial testing.",
+      "Improves prompts by comparing variations against each other — instead of tuning by hand and hoping for the best.",
     tags: ["LLM", "Prompting", "Evaluation"],
     status: "experimental",
   },
@@ -76,7 +76,7 @@ export const labProjects: LabProject[] = [
     id: "decision-tree-viz",
     title: "Decision Tree Visualizer",
     description:
-      "Interactive visualization of clinical decision trees, making complex branching logic auditable and explainable.",
+      "A way to see why a decision-support tool reached a specific recommendation — by stepping through the rules it actually used.",
     tags: ["Visualization", "XAI", "Clinical"],
     status: "prototype",
   },
@@ -84,15 +84,15 @@ export const labProjects: LabProject[] = [
     id: "rag-medlit",
     title: "RAG Medical Literature",
     description:
-      "Retrieval-augmented generation over medical literature. Ask clinical questions, get cited answers from PubMed abstracts.",
+      "Answers clinical questions from PubMed abstracts and returns the sources alongside each answer — so you can check where the answer came from.",
     tags: ["RAG", "NLP", "Medical"],
     status: "experimental",
   },
   {
     id: "habit-loop",
-    title: "Habit Loop AI",
+    title: "Habit Loop",
     description:
-      "AI-assisted habit tracking that identifies patterns in behavior data and suggests personalized intervention strategies.",
+      "Looks for patterns in when habits stick or break, and suggests small adjustments — beyond the usual streak counter.",
     tags: ["Behavioral AI", "Tracking", "Mobile"],
     status: "prototype",
   },
