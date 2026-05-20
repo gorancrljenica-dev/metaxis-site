@@ -5,9 +5,7 @@ export const metadata: Metadata = {
   robots: "noindex, nofollow",
 };
 
-// Server-side only — never exposed to client bundle
-const SECRET_TOKEN = "m8Xp2kQz9vR4nL7s";
-const PDF_FILENAME = "b3f9a2c7e5d8f1b4.pdf";
+export const dynamic = "force-dynamic";
 
 export default async function DownloadPage({
   params,
@@ -15,8 +13,9 @@ export default async function DownloadPage({
   params: Promise<{ token: string }>;
 }) {
   const { token } = await params;
+  const validToken = process.env.BOOK_DOWNLOAD_TOKEN;
 
-  if (token !== SECRET_TOKEN) {
+  if (!validToken || token !== validToken) {
     return (
       <div className="min-h-screen bg-[#09090b] flex items-center justify-center px-6">
         <div className="text-center">
@@ -86,8 +85,7 @@ export default async function DownloadPage({
           </div>
 
           <a
-            href={`/dl/${PDF_FILENAME}`}
-            download="Operativni-Sistem-za-rad-sa-AI.pdf"
+            href={`/api/download-book/${token}`}
             className="flex items-center justify-center gap-2 w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-colors text-sm"
           >
             Preuzmi PDF
