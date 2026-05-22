@@ -231,3 +231,97 @@ The visual language defined in this document translated from design intent to li
 - [ ] Visual category differs from previous post
 - [ ] Accent color not repeated from previous post
 - [ ] Visual does not duplicate the caption
+
+---
+
+## Visual Artifact Storage
+
+Visuals are traceable pipeline artifacts. Every visual — produced, approved, deployed, or rejected — has a designated location.
+
+```
+content-pipeline/visuals/
+├── linkedin/
+│   ├── raw/        — V1/V2/V3 variants, not yet reviewed
+│   ├── approved/   — passed human review + feed-context test
+│   ├── deployed/   — used in a live post
+│   └── rejected/   — failed at any stage (must be preserved)
+├── instagram/
+│   ├── raw/
+│   ├── approved/
+│   ├── deployed/
+│   └── rejected/
+└── facebook/
+    ├── raw/
+    ├── approved/
+    ├── deployed/
+    └── rejected/
+```
+
+**Naming convention:** `YYYY-MM-DD_platform_slug_version.ext`
+
+Examples:
+```
+2026-05-21_linkedin_agent-loopovi_v1.png      — raw
+2026-05-21_linkedin_agent-loopovi_APPROVED.png — approved (V2 corrected)
+2026-05-21_linkedin_agent-loopovi_DEPLOYED.png — deployed
+2026-05-21_linkedin_agent-loopovi_v1.png      — also in rejected/ (V1 footer failure)
+```
+
+Each rejected file must have a `.md` rejection note explaining why. Rejected visuals are evaluator data — do not delete.
+
+Each deployed file must have a deploy note referencing the validation log entry in `REAL_WORLD_VALIDATION.md`.
+
+See each platform's stage README for full format requirements.
+
+---
+
+## Cross-Platform Visual Findings
+
+From the first full publishing cycle (blog-001, all three platforms, 2026-05-22).
+
+**Same content needs different visual logic per platform.**
+LinkedIn: calm typography card. Instagram: process carousel. Facebook: artifact-style image. The source content was identical. The visual execution had nothing in common. Do not adapt a LinkedIn visual for Instagram — produce from scratch.
+
+**Category A (typography) is LinkedIn's natural register, not a universal default.**
+On LinkedIn, a dark background with one clean statement reads as editorial authority. On Facebook, the same card reads as a branded ad. On Instagram, it reads as a quote post. Category A is appropriate for LinkedIn; it is often the wrong choice for the other two platforms.
+
+**Category C (sketch systems) worked for process/loop content on Instagram.**
+Sequential process content — loops, flows, multi-step frameworks — maps well to carousel format with sketch-style visuals. The rough operational aesthetic reads as authentic thinking, not polished marketing.
+
+**Category B/D (artifact realism) was the strongest choice for Facebook.**
+A notebook or real work environment feels personal on Facebook's network-oriented feed. It does not feel personal on LinkedIn. Know which platform is being designed for before choosing a category.
+
+**Visual fatigue warning — first cycle complete.**
+The following must not repeat in the next cycle without variation:
+- Category A on any platform
+- Amber accent on any platform
+- Carousel format on Instagram
+- Notebook/workspace on Facebook
+
+The next cycle must use different categories across all three platforms.
+
+---
+
+## Cycle 002 Visual Findings
+
+From blog-002 deployment (all three platforms, 2026-05-22). Source type: deployment failure narrative.
+
+**Visuals work better as evidence than as identity.**
+Cycle 001 Category A made the visual the post's primary identity signal — the audience sees the brand before they see the content. Cycle 002 Category D (operational workstation, Instagram) acted as evidence that a specific failure happened. When the visual shows rather than announces, audience trust increases. The visual earns attention rather than demanding it.
+
+**Visual dependency decreases when narrative strength increases.**
+Cycle 002 captions were operationally grounded in a specific real event. The visual's job became support rather than anchor — the Instagram caption would stand independently without its visual. In Cycle 001, the Category A visual was more load-bearing. Implication: invest in caption quality before visual production. Strong captions reduce visual dependency.
+
+**Operational realism outperformed polished systems aesthetics.**
+Category D (real operational workstation with actual deployment logs) registered in feed as a real debugging session. Category A (clean typography card) registered as designed content. In Cycle 002's context — a deployment failure narrative — the gap between "real" and "designed" was detectable and meaningful. Match visual register to source type, not to brand consistency alone.
+
+**Sketch diagram (Category C) is most effective when caption and visual have different jobs.**
+Facebook Cycle 002: the two-column divergence diagram showed the gap between deployment state and operational state. The caption told the story; the visual showed the structure. When caption and visual describe the same thing differently, neither is redundant. When they describe the same thing in the same way, one is unnecessary.
+
+**Category D is a primary option, not a fallback.**
+The visual concept notes for Cycle 002 treated Category D as a backup if no polished visual could be produced. In deployment, Category D performed as the strongest credibility signal. Real operational environments convey competence in a way that designed typography cards cannot. For content grounded in real events — deployment failures, debugging processes, real system behavior — Category D should be the first consideration, not the last.
+
+**Visual rotation principle holds.**
+Cycle 001: A (LinkedIn), C (Instagram), B/D (Facebook).
+Cycle 002: B (LinkedIn), D (Instagram), C (Facebook).
+No category repeated on any platform across two cycles. The visual language remained variable. This is the correct behavior. Continue rotating.
